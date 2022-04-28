@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class Auth: AbstractRequestFactory {
+class AuthRequest: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
@@ -22,10 +22,9 @@ class Auth: AbstractRequestFactory {
         self.sessionManager = sessionManager
         self.queue = queue
     }
-    
 }
 
-extension Auth: AuthRequestFactory {
+extension AuthRequest: AuthRequestFactory {
     
     func register(username: String, password: String, email: String, gender: User.Gender, creditCard: String, bio: String, bcompletionHandler completionHandler: @escaping (AFDataResponse<RegisterationResult>) -> Void) {
         let requestModel = Registeration(baseUrl: baseUrl, login: username, password: password, email: email, gender: gender, creditCard: creditCard, bio: bio)
@@ -46,12 +45,9 @@ extension Auth: AuthRequestFactory {
         let requestModel = Login(baseUrl: baseUrl, login: userName, password: password)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
-    
 }
 
-
-extension Auth {
-    
+extension AuthRequest {
     struct Login: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .get
