@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let auth = requestFactory.makeAuthRequestFatory()
+        let product = requestFactory.makeProductRequestFactory()
         
         auth.register(username: "Zasenko", password: "12345", email: "dmitry.zasenko@gmail.com", gender: .male, creditCard: "5555555", bio: "bad boy") { response in
             switch response.result {
@@ -32,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             case .failure(let error):
                 print(error.localizedDescription)
             }
-            
         }
         
         auth.changeUserData(username: "Dmitry", password: "12345", email: "dmitry.zasenko@gmail.com", gender: .male, creditCard: "5555555", bio: "good boy") { response in
@@ -54,8 +54,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        return true
+        product.getProducts(id: 1, page: 1) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
+        product.getProduckById(id: 1) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        return true
     }
 
     // MARK: UISceneSession Lifecycle
@@ -71,7 +88,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
-

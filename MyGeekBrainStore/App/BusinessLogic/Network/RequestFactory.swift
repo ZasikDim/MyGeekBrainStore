@@ -12,10 +12,9 @@ class RequestFactory {
     
     func makeErrorParser() -> AbstractErrorParser {
         return ErrorParser()
-        
     }
     
-    lazy var commonSession: Session = {
+    lazy var requestFactorySession: Session = {
         let configuration = URLSessionConfiguration.default
         configuration.httpShouldSetCookies = false
         configuration.headers = .default
@@ -27,7 +26,11 @@ class RequestFactory {
     
     func makeAuthRequestFatory() -> AuthRequestFactory {
         let errorParser = makeErrorParser()
-        return Auth(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+        return AuthRequest(errorParser: errorParser, sessionManager: requestFactorySession, queue: sessionQueue)
     }
     
+    func makeProductRequestFactory() -> ProductRequestFactory {
+        let errorParser = makeErrorParser()
+        return ProductRequest(errorParser: errorParser, sessionManager: requestFactorySession, queue: sessionQueue)
+    }
 }
