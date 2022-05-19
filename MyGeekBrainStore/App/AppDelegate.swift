@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let auth = requestFactory.makeAuthRequestFatory()
         let product = requestFactory.makeProductRequestFactory()
+        let review = requestFactory.makeReviewRequestFactory()
         
         auth.register(username: "Zasenko", password: "12345", email: "dmitry.zasenko@gmail.com", gender: .male, creditCard: "5555555", bio: "bad boy") { response in
             switch response.result {
@@ -64,6 +65,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         product.getProduckById(id: 1) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        review.addReview(userId: 123, text: "all good") { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        review.approveReview(commentId: 123) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        review.removeReview(commentId: 123) { response in
             switch response.result {
             case .success(let result):
                 print(result)
