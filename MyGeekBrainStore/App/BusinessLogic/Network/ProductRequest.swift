@@ -13,7 +13,7 @@ class ProductRequest: AbstractRequestFactory {
     var sessionManager: Session
     var queue: DispatchQueue
     
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    let baseUrl = URL(string: "https://glacial-wildwood-24509.herokuapp.com/")!
     
     init(errorParser: AbstractErrorParser,
          sessionManager: Session,
@@ -25,7 +25,7 @@ class ProductRequest: AbstractRequestFactory {
 }
 
 extension ProductRequest: ProductRequestFactory {
-    func getProducts(id: Int, page: Int, completionHandler: @escaping (AFDataResponse<[ProductResult]>) -> Void) {
+    func getProducts(id: Int, page: Int, completionHandler: @escaping (AFDataResponse<CatalogResult>) -> Void) {
         let requestModel = Product(baseUrl: baseUrl, id: id, page: page)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
@@ -38,20 +38,20 @@ extension ProductRequest: ProductRequestFactory {
 extension ProductRequest {
     struct Product: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "catalogData.json"
+        let method: HTTPMethod = .post
+        let path: String = "getProducts"
         let id: Int
         let page: Int
         var parameters: Parameters? {
             return [
                 "id_category": id,
-                "page_numbe" : page
+                "page_number" : page
             ]
         }
     }
     struct ProductById: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
+        let method: HTTPMethod = .post
         let path: String = "getGoodById.json"
         let id: Int
         var parameters: Parameters? {

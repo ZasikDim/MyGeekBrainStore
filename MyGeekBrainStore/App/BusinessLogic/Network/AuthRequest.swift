@@ -26,7 +26,7 @@ class AuthRequest: AbstractRequestFactory {
 
 extension AuthRequest: AuthRequestFactory {
     
-    func register(username: String, password: String, email: String, gender: User.Gender, creditCard: String, bio: String, bcompletionHandler completionHandler: @escaping (AFDataResponse<RegisterationResult>) -> Void) {
+    func register(username: String, password: String, email: String, gender: UserResult.Gender, creditCard: String, bio: String, bcompletionHandler completionHandler: @escaping (AFDataResponse<RegisterationResult>) -> Void) {
         let requestModel = Registeration(baseUrl: baseUrl, login: username, password: password, email: email, gender: gender, creditCard: creditCard, bio: bio)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
@@ -36,7 +36,7 @@ extension AuthRequest: AuthRequestFactory {
         self.request(request: requestModel, completionHandler: completionHandler)
     }
     
-    func changeUserData(username: String, password: String, email: String, gender: User.Gender, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void) {
+    func changeUserData(username: String, password: String, email: String, gender: UserResult.Gender, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void) {
         let requestModel = Registeration(baseUrl: baseUrl, login: username, password: password, email: email, gender: gender, creditCard: creditCard, bio: bio)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
@@ -70,7 +70,7 @@ extension AuthRequest {
         let login: String
         let password: String
         let email: String
-        let gender: User.Gender
+        let gender: UserResult.Gender
         let creditCard: String
         let bio: String
         var parameters: Parameters? {
@@ -106,7 +106,7 @@ extension AuthRequest {
         let login: String
         let password: String
         let email: String
-        let gender: User.Gender
+        let gender: UserResult.Gender
         let creditCard: String
         let bio: String
         var parameters: Parameters? {

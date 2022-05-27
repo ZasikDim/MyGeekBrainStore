@@ -24,10 +24,10 @@ class ProductRequestTest: XCTestCase {
         productRequest.getProducts(id: 1, page: 1) { response in
             switch response.result {
             case .success(let result):
-                for i in 0 ..< result.count {
-                    XCTAssertEqual(result[i].id, self.expressionProductStub[i].id)
-                    XCTAssertEqual(result[i].name, self.expressionProductStub[i].name)
-                    XCTAssertEqual(result[i].price, self.expressionProductStub[i].price)
+                for i in 0 ..< result.products.count {
+                    XCTAssertEqual(result.products[i].id, self.expressionProductStub[i].id)
+                    XCTAssertEqual(result.products[i].name, self.expressionProductStub[i].name)
+                    XCTAssertEqual(result.products[i].price, self.expressionProductStub[i].price)
                 }
             case .failure(let error):
                 XCTFail(error.localizedDescription)

@@ -7,6 +7,18 @@
 
 import Foundation
 
+struct CatalogResult: Codable {
+    let page: Int
+    let products: [ProductResult]
+    let error: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case page = "page_number"
+        case products
+        case error = "error_message"
+    }
+}
+
 struct ProductResult: Codable {
     let id: Int
     let name: String
