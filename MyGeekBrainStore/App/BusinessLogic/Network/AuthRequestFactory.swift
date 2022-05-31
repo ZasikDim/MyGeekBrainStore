@@ -12,6 +12,6 @@ protocol AuthRequestFactory {
     
     func login(userName: String, password: String, completionHandler: @escaping (AFDataResponse<LoginResult>) -> Void)
     func logout(completionHandler: @escaping (AFDataResponse<LogoutResult>) -> Void)
-    func register(username: String, password: String, email: String, gender: UserResult.Gender, creditCard: String, bio: String, bcompletionHandler: @escaping (AFDataResponse<RegisterationResult>) -> Void)
-    func changeUserData(username: String, password: String, email: String, gender: UserResult.Gender, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void)
+    func register(username: String, password: String, email: String, gender: Gender, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<RegisterationResult>) -> Void)
+    func changeUserData(username: String, password: String, email: String, gender: Gender, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void)
 }

@@ -9,9 +9,9 @@ import Foundation
 import Alamofire
 
 class BasketRequest: AbstractRequestFactory {
-    var errorParser: AbstractErrorParser
-    var sessionManager: Session
-    var queue: DispatchQueue
+    let errorParser: AbstractErrorParser
+    let sessionManager: Session
+    let queue: DispatchQueue
     
     let baseUrl = URL(string: "https://glacial-wildwood-24509.herokuapp.com/")!
     

@@ -40,6 +40,7 @@ class CatalogViewController: UIViewController {
         viewModel.updateView = { [unowned self] in
             DispatchQueue.main.sync {
                 self.catalogTableView.reloadData()
+                self.tabBarController?.tabBar.items?[1].badgeValue = String(Basket.shared.items.count)
             }
         }
     }

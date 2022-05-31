@@ -17,7 +17,7 @@ class AuthRequestTest: XCTestCase {
     let userName = "Dmitry"
     let password = "12345"
     let email = "email@email.com"
-    let gender: UserResult.Gender = .male
+    let gender: Gender = .male
     let creditCard = "3453-4534-5345"
     let bio = "bla bla"
     let expressionLogInStub: LoginResult = LoginResult(result: 1, user: UserResult(id: 123, login: "geekbrains", name: "John", lastname: "Doe"))

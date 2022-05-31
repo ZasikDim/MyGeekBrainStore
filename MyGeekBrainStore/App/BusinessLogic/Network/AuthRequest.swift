@@ -12,7 +12,7 @@ class AuthRequest: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    let baseUrl = URL(string: "https://glacial-wildwood-24509.herokuapp.com/")!
     
     init(errorParser: AbstractErrorParser,
          sessionManager: Session,
@@ -26,7 +26,7 @@ class AuthRequest: AbstractRequestFactory {
 
 extension AuthRequest: AuthRequestFactory {
     
-    func register(username: String, password: String, email: String, gender: UserResult.Gender, creditCard: String, bio: String, bcompletionHandler completionHandler: @escaping (AFDataResponse<RegisterationResult>) -> Void) {
+    func register(username: String, password: String, email: String, gender: Gender, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<RegisterationResult>) -> Void) {
         let requestModel = Registeration(baseUrl: baseUrl, login: username, password: password, email: email, gender: gender, creditCard: creditCard, bio: bio)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
@@ -36,8 +36,8 @@ extension AuthRequest: AuthRequestFactory {
         self.request(request: requestModel, completionHandler: completionHandler)
     }
     
-    func changeUserData(username: String, password: String, email: String, gender: UserResult.Gender, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void) {
-        let requestModel = Registeration(baseUrl: baseUrl, login: username, password: password, email: email, gender: gender, creditCard: creditCard, bio: bio)
+    func changeUserData(username: String, password: String, email: String, gender: Gender, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void) {
+        let requestModel = ChangeUserData(baseUrl: baseUrl, login: username, password: password, email: email, gender: gender, creditCard: creditCard, bio: bio)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
     
@@ -50,8 +50,8 @@ extension AuthRequest: AuthRequestFactory {
 extension AuthRequest {
     struct Login: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "login.json"
+        let method: HTTPMethod = .post
+        let path: String = "login"
         let login: String
         let password: String
         var parameters: Parameters? {
@@ -63,14 +63,14 @@ extension AuthRequest {
     }
     
     struct Registeration: RequestRouter {
-        var baseUrl: URL
-        var method: HTTPMethod = .get
-        var path: String = "registerUser.json"
-        let id = "123"
+        let baseUrl: URL
+        let method: HTTPMethod = .post
+        let path: String = "register"
+        let id: Int = 123
         let login: String
         let password: String
         let email: String
-        let gender: UserResult.Gender
+        let gender: Gender
         let creditCard: String
         let bio: String
         var parameters: Parameters? {
@@ -87,10 +87,10 @@ extension AuthRequest {
     }
     
     struct Logout: RequestRouter {
-        var baseUrl: URL
-        var method: HTTPMethod = .get
-        var path: String = "logout.json"
-        let id = "123"
+        let baseUrl: URL
+        let method: HTTPMethod = .post
+        let path: String = "logout"
+        let id: Int = 123
         var parameters: Parameters? {
             return [
                 "id_user": id
@@ -99,14 +99,14 @@ extension AuthRequest {
     }
     
     struct ChangeUserData: RequestRouter {
-        var baseUrl: URL
-        var method: HTTPMethod = .get
-        var path: String = "registerUser.json"
-        let id = "123"
+        let baseUrl: URL
+        let method: HTTPMethod = .post
+        let path: String = "changeUserData"
+        let id: Int = 123
         let login: String
         let password: String
         let email: String
-        let gender: UserResult.Gender
+        let gender: Gender
         let creditCard: String
         let bio: String
         var parameters: Parameters? {

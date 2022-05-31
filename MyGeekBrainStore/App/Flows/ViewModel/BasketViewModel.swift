@@ -16,20 +16,6 @@ final class BasketViewModel {
     private let user = User.shared
     private let basketRequestFactory = RequestFactory().makeBasketRequestFactory()
     
-    init() {
-        getBasket()
-    }
-    func getBasket() {
-        basketRequestFactory.getBasket(userId: user.id) { [weak self] response in
-            guard let self = self else { return }
-            switch response.result {
-            case .success(let result):
-                self.basket.items.append(contentsOf: result.contents)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
     func pay() {
         if !basket.items.isEmpty {
             basketRequestFactory.pay(userId: user.id) { [weak self] response in

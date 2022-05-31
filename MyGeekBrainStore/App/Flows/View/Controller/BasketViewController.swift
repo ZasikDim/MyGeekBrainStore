@@ -42,6 +42,7 @@ final class BasketViewController: UIViewController {
         viewModel.updateView = { [unowned self] in
             DispatchQueue.main.sync {
                 self.basketTableView.reloadData()
+                self.tabBarController?.tabBar.items?[1].badgeValue = String(Basket.shared.items.count)
             }
         }
         viewModel.updateViewWithMassage = { [unowned self] in
@@ -51,6 +52,7 @@ final class BasketViewController: UIViewController {
             DispatchQueue.main.async {
                 self.present(alert, animated: true, completion: nil)
                 self.basketTableView.reloadData()
+                self.tabBarController?.tabBar.items?[1].badgeValue = String(Basket.shared.items.count)
             }
         }
     }
@@ -72,6 +74,7 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             viewModel.deleteFromBasket(productId: id)
             viewModel.basket.items.remove(at: indexPath.row)
             basketTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            self.tabBarController?.tabBar.items?[1].badgeValue = String(Basket.shared.items.count)
         }
     }
 }

@@ -35,5 +35,20 @@ class CatalogItemViewController: UIViewController {
         name.text = viewModel.item?.name ?? ""
         let a = viewModel.item?.price ?? 0
         price.text = "\(a) руб."
+        
+        viewModel.updateView = { [unowned self] in
+            
+            let alert = UIAlertController(title: nil, message: "Товар добавлен в корзину.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+                self.performSegue(withIdentifier: "unwindFromCatalogItemView", sender: self)
+                
+            }))
+            DispatchQueue.main.sync {
+                self.tabBarController?.tabBar.items?[1]
+                    .badgeValue = String(Basket.shared.items.count)
+                self.present(alert, animated: true)
+                
+            }
+        }
     }
 }
