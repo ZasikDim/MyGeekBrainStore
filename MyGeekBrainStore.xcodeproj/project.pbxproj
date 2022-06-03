@@ -45,6 +45,7 @@
 		0F78FA0B28366194005F9DC4 /* ReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F78FA0A28366194005F9DC4 /* ReviewRequest.swift */; };
 		0F78FA0D28366428005F9DC4 /* ReviewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F78FA0C28366428005F9DC4 /* ReviewResult.swift */; };
 		0F78FA0F283666D3005F9DC4 /* ReviewRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F78FA0E283666D3005F9DC4 /* ReviewRequestTest.swift */; };
+		0F82AED4284A4A0000A9742A /* BasketRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82AED3284A4A0000A9742A /* BasketRequestTest.swift */; };
 		0FAE390E283CF0400040AC2A /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAE390D283CF0400040AC2A /* Shop.storyboard */; };
 		0FC238D12816EC6A005B34A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CD7F02811A39C00929319 /* AppDelegate.swift */; };
 		0FE57D7928461EFC0072629A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE57D7828461EFC0072629A /* RegistrationViewController.swift */; };
@@ -121,6 +122,7 @@
 		0F78FA0A28366194005F9DC4 /* ReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRequest.swift; sourceTree = "<group>"; };
 		0F78FA0C28366428005F9DC4 /* ReviewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResult.swift; sourceTree = "<group>"; };
 		0F78FA0E283666D3005F9DC4 /* ReviewRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRequestTest.swift; sourceTree = "<group>"; };
+		0F82AED3284A4A0000A9742A /* BasketRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRequestTest.swift; sourceTree = "<group>"; };
 		0FAE390D283CF0400040AC2A /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		0FE57D7828461EFC0072629A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		0FE57D7A284621C00072629A /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				0F75201C28197E7100D79315 /* AuthRequestTest.swift */,
 				0FFC13BB281AC4E200BEEB35 /* ProductRequestTest.swift */,
 				0F78FA0E283666D3005F9DC4 /* ReviewRequestTest.swift */,
+				0F82AED3284A4A0000A9742A /* BasketRequestTest.swift */,
 			);
 			path = MyGeekBrainStoreTests;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F75201D28197E7100D79315 /* AuthRequestTest.swift in Sources */,
+				0F82AED4284A4A0000A9742A /* BasketRequestTest.swift in Sources */,
 				0FFC13BC281AC4E200BEEB35 /* ProductRequestTest.swift in Sources */,
 				0F78FA0F283666D3005F9DC4 /* ReviewRequestTest.swift in Sources */,
 			);

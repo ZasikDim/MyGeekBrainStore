@@ -23,10 +23,7 @@ final class BasketViewModel {
                 switch response.result {
                 case .success(let result):
                     if result.result == 1 {
-                        self.massage = result.userMessage
-                        self.basket.items = []
-                        self.updateViewWithMassage?()
-                        self.massage = nil
+                        self.updateMassage(massage: result.userMessage ?? "")
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -40,10 +37,7 @@ final class BasketViewModel {
             switch response.result {
             case .success(let result):
                 if result.result == 1 {
-                    self.massage = result.userMessage
-                    self.basket.items = []
-                    self.updateViewWithMassage?()
-                    self.massage = nil
+                    self.updateMassage(massage: result.userMessage ?? "")
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -64,5 +58,11 @@ final class BasketViewModel {
                 print(error.localizedDescription)
             }
         }
+    }
+    private func updateMassage(massage: String) {
+        self.massage = massage
+        self.basket.items = []
+        self.updateViewWithMassage?()
+        self.massage = nil
     }
 }
