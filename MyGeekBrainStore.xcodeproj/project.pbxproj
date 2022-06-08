@@ -43,6 +43,7 @@
 		0F6CD7FD2811A39D00929319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CD7FB2811A39D00929319 /* LaunchScreen.storyboard */; };
 		0F6CD8122811A39D00929319 /* MyGeekBrainStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CD8112811A39D00929319 /* MyGeekBrainStoreUITests.swift */; };
 		0F6CD8142811A39D00929319 /* MyGeekBrainStoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CD8132811A39D00929319 /* MyGeekBrainStoreUITestsLaunchTests.swift */; };
+		0F6F04402850EA330073B706 /* LoginViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F043F2850EA330073B706 /* LoginViewUITests.swift */; };
 		0F7145672843A86E00DB85BF /* ChangeUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7145662843A86E00DB85BF /* ChangeUserInfoViewController.swift */; };
 		0F75201D28197E7100D79315 /* AuthRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F75201C28197E7100D79315 /* AuthRequestTest.swift */; };
 		0F756CDA283CDDC500C13661 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756CD9283CDDC500C13661 /* BasketViewController.swift */; };
@@ -125,6 +126,7 @@
 		0F6CD80D2811A39D00929319 /* MyGeekBrainStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGeekBrainStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F6CD8112811A39D00929319 /* MyGeekBrainStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGeekBrainStoreUITests.swift; sourceTree = "<group>"; };
 		0F6CD8132811A39D00929319 /* MyGeekBrainStoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGeekBrainStoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0F6F043F2850EA330073B706 /* LoginViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewUITests.swift; sourceTree = "<group>"; };
 		0F7145662843A86E00DB85BF /* ChangeUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserInfoViewController.swift; sourceTree = "<group>"; };
 		0F75201C28197E7100D79315 /* AuthRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestTest.swift; sourceTree = "<group>"; };
 		0F756CD9283CDDC500C13661 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				0F6CD8112811A39D00929319 /* MyGeekBrainStoreUITests.swift */,
+				0F6F043F2850EA330073B706 /* LoginViewUITests.swift */,
 				0F6CD8132811A39D00929319 /* MyGeekBrainStoreUITestsLaunchTests.swift */,
 			);
 			path = MyGeekBrainStoreUITests;
@@ -599,6 +602,7 @@
 			files = (
 				0F6CD8122811A39D00929319 /* MyGeekBrainStoreUITests.swift in Sources */,
 				0F6CD8142811A39D00929319 /* MyGeekBrainStoreUITestsLaunchTests.swift in Sources */,
+				0F6F04402850EA330073B706 /* LoginViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

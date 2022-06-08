@@ -591,8 +591,10 @@
                         <imageReference key="image" image="person.fill" catalog="system" symbolScale="large" renderingMode="template"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="loginButton" destination="wL2-gK-rv4" id="33d-nz-Oqj"/>
                         <outlet property="loginTextField" destination="PZk-RD-kh9" id="XTF-tI-hVh"/>
                         <outlet property="passwordTextField" destination="1xe-kU-t9u" id="brW-vE-hHg"/>
+                        <outlet property="registrationButton" destination="DN1-fA-RqZ" id="OYp-3g-oYB"/>
                         <segue destination="eDP-Q6-aio" kind="show" identifier="toUserView" id="h4X-my-ZW8"/>
                     </connections>
                 </viewController>
