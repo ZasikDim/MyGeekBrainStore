@@ -21,6 +21,7 @@ final class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityIdentifier = "RegistrationViewController"
         viewModel.updateViewWithMassage = { [unowned self] in
             guard let massage = viewModel.massage else { return }
             showAlert(massage: massage, performSegue: true)

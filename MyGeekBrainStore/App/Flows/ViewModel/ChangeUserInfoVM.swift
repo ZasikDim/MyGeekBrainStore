@@ -26,8 +26,6 @@ final class ChangeUserInfoVM {
                     User.shared.creditCard = creditCard
                     User.shared.bio = bio
                     User.shared.gender = gender
-                    print("--------------------")
-                    print(result)
                     self.massage = "Ваши данные изменились"
                     self.updateViewWithMassage?()
                     self.massage = nil
