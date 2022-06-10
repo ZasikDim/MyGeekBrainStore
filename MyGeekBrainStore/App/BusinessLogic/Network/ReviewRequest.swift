@@ -13,7 +13,7 @@ class ReviewRequest: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    let baseUrl = URL(string: "https://glacial-wildwood-24509.herokuapp.com/")!
     
     init(errorParser: AbstractErrorParser,
          sessionManager: Session,
@@ -44,8 +44,8 @@ extension ReviewRequest: ReviewRequestFactory {
 extension ReviewRequest {
     struct AddReviewRequestModel: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "addReview.json"
+        let method: HTTPMethod = .post
+        let path: String = "addReview"
         let userId: Int
         let text: String
         var parameters: Parameters? {
@@ -57,8 +57,8 @@ extension ReviewRequest {
     }
     struct ApproveReviewRequestModel: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "approveReview.json"
+        let method: HTTPMethod = .post
+        let path: String = "approveReview"
         let commentId: Int
         var parameters: Parameters? {
             return [
@@ -68,8 +68,8 @@ extension ReviewRequest {
     }
     struct RemoveReviewRequestModel: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "removeReview.json"
+        let method: HTTPMethod = .post
+        let path: String = "removeReview"
         let commentId: Int
         var parameters: Parameters? {
             return [

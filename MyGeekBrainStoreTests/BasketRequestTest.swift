@@ -13,7 +13,7 @@ class BasketRequestTest: XCTestCase {
     let expressionPayStub = PayResult(result: 1, userMessage: "Оплата успешно прошла", errorMessage: nil)
     let expressionDeleteAllBasketStub = DeleteAllBasketResult(result: 1, userMessage: "Все товары из корзины удалены", errorMessage: nil)
     let expressionDeleteFromBasketStub = DeleteFromBasketResult(result: 1, errorMessage: nil)
-    let expressionAddToBasketStub = AddToBasketResult(result: 1, errorMessage: expressionAddToBasketStub)
+    let expressionAddToBasketStub = AddToBasketResult(result: 1, errorMessage: nil)
     
     override func setUpWithError() throws {}
     override func tearDownWithError() throws {}

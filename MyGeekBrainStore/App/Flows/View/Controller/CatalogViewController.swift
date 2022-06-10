@@ -21,6 +21,8 @@ class CatalogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewModel()
+        
+        view.accessibilityIdentifier = "CatalogViewController"
     }
     
     @IBAction func unwindFromCatalogItemView(unwindSegue: UIStoryboardSegue) {

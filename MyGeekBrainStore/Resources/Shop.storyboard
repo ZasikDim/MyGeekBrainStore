@@ -257,16 +257,31 @@
                                     </stepper>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTw-mv-IU4">
+                                <rect key="frame" x="142" y="422" width="130" height="30"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Добавить отзыв">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="13"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="CwK-79-xod" kind="show" identifier="fromItemToReviewView" id="W1c-na-Mwu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0bs-kR-bTR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iVO-uO-nBn" firstAttribute="leading" secondItem="0bs-kR-bTR" secondAttribute="leading" constant="20" id="2g4-RI-iGC"/>
+                            <constraint firstItem="aTw-mv-IU4" firstAttribute="top" secondItem="7KF-m1-ftq" secondAttribute="bottom" constant="20" id="Fy4-7y-rrw"/>
                             <constraint firstItem="5hU-zf-CbH" firstAttribute="leading" secondItem="0bs-kR-bTR" secondAttribute="leading" constant="20" id="IAp-el-v4u"/>
                             <constraint firstItem="L10-mj-Fyd" firstAttribute="leading" secondItem="0bs-kR-bTR" secondAttribute="leading" constant="20" id="IwX-G0-1D2"/>
                             <constraint firstItem="iVO-uO-nBn" firstAttribute="top" secondItem="5hU-zf-CbH" secondAttribute="bottom" constant="100" id="Jbh-UE-tkn"/>
                             <constraint firstItem="L10-mj-Fyd" firstAttribute="top" secondItem="0bs-kR-bTR" secondAttribute="top" constant="20" id="Ld0-9V-CXf"/>
                             <constraint firstItem="5hU-zf-CbH" firstAttribute="centerX" secondItem="sdX-Oj-lER" secondAttribute="centerX" id="Mfx-Un-rfg"/>
+                            <constraint firstItem="aTw-mv-IU4" firstAttribute="centerX" secondItem="sdX-Oj-lER" secondAttribute="centerX" id="WBk-Ff-te4"/>
                             <constraint firstItem="5hU-zf-CbH" firstAttribute="top" secondItem="L10-mj-Fyd" secondAttribute="bottom" constant="50" id="WSP-uj-bpz"/>
                             <constraint firstItem="0bs-kR-bTR" firstAttribute="trailing" secondItem="L10-mj-Fyd" secondAttribute="trailing" constant="20" id="i9z-tm-suh"/>
                             <constraint firstItem="0bs-kR-bTR" firstAttribute="trailing" secondItem="5hU-zf-CbH" secondAttribute="trailing" constant="20" id="kCN-Dh-ySU"/>
@@ -288,6 +303,142 @@
                 <exit id="WC2-2l-Cyu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1642" y="-607"/>
+        </scene>
+        <!--Добавить отзыв-->
+        <scene sceneID="AVw-WI-5Xg">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="CwK-79-xod" customClass="ReviewViewController" customModule="MyGeekBrainStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jKQ-sa-8du">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-XS-NmN">
+                                <rect key="frame" x="142" y="190" width="130" height="30"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Добавить отзыв">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="13"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="CwK-79-xod" eventType="touchUpInside" id="cA8-pW-7hd"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdJ-wb-BJU">
+                                <rect key="frame" x="20" y="106" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9tv-KO-PPe">
+                                <rect key="frame" x="20" y="240" width="374" height="553"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewTableViewCell" id="Kj6-xI-wgS" customClass="ReviewTableViewCell" customModule="MyGeekBrainStore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="194"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kj6-xI-wgS" id="Ecy-5u-wbY">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="194"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id товара" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8p4-Ua-b5u">
+                                                    <rect key="frame" x="30" y="21" width="314" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отзыв" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXg-IF-4jE">
+                                                    <rect key="frame" x="30" y="92" width="314" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="2Dd-Rh-Qpu">
+                                                    <rect key="frame" x="30" y="132.5" width="314" height="30.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZE-JL-yCG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="136.5" height="30.5"/>
+                                                            <color key="tintColor" systemColor="systemYellowColor"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="filled" title="Одобрить">
+                                                                <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                                            </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="approveButtonTapped:" destination="Kj6-xI-wgS" eventType="touchUpInside" id="Oba-Cw-y1s"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc7-TT-dEC">
+                                                            <rect key="frame" x="174.5" y="0.0" width="139.5" height="30.5"/>
+                                                            <color key="tintColor" systemColor="systemRedColor"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="filled" title="Удалить">
+                                                                <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                                            </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="deleteButtonTapped:" destination="Kj6-xI-wgS" eventType="touchUpInside" id="5h1-dz-nL2"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id отзыва" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZd-6a-IhC">
+                                                    <rect key="frame" x="30" y="51.5" width="314" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2Dd-Rh-Qpu" firstAttribute="leading" secondItem="Ecy-5u-wbY" secondAttribute="leadingMargin" constant="10" id="20C-um-uPc"/>
+                                                <constraint firstItem="zXg-IF-4jE" firstAttribute="leading" secondItem="Ecy-5u-wbY" secondAttribute="leadingMargin" constant="10" id="9NO-Fm-MNw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="XZd-6a-IhC" secondAttribute="trailing" constant="10" id="A5R-9W-vg9"/>
+                                                <constraint firstItem="XZd-6a-IhC" firstAttribute="top" secondItem="8p4-Ua-b5u" secondAttribute="bottom" constant="10" id="AUf-bN-3Ow"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8p4-Ua-b5u" secondAttribute="trailing" constant="10" id="dYR-WS-biS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2Dd-Rh-Qpu" secondAttribute="trailing" constant="10" id="mdu-QN-hs7"/>
+                                                <constraint firstItem="XZd-6a-IhC" firstAttribute="leading" secondItem="Ecy-5u-wbY" secondAttribute="leadingMargin" constant="10" id="nOT-ev-ol1"/>
+                                                <constraint firstItem="2Dd-Rh-Qpu" firstAttribute="top" secondItem="zXg-IF-4jE" secondAttribute="bottom" constant="20" id="oiO-D0-sKX"/>
+                                                <constraint firstItem="8p4-Ua-b5u" firstAttribute="leading" secondItem="Ecy-5u-wbY" secondAttribute="leadingMargin" constant="10" id="opJ-UO-zvd"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zXg-IF-4jE" secondAttribute="trailing" constant="10" id="phn-mR-Fsp"/>
+                                                <constraint firstItem="8p4-Ua-b5u" firstAttribute="top" secondItem="Ecy-5u-wbY" secondAttribute="topMargin" constant="10" id="scy-bi-9aX"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2Dd-Rh-Qpu" secondAttribute="bottom" constant="20" id="tZR-XN-o0h"/>
+                                                <constraint firstItem="zXg-IF-4jE" firstAttribute="top" secondItem="XZd-6a-IhC" secondAttribute="bottom" constant="20" id="xxu-8v-dgb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemIdLable" destination="8p4-Ua-b5u" id="0Ho-jv-YOa"/>
+                                            <outlet property="reviewIdLable" destination="XZd-6a-IhC" id="YLe-yt-bfH"/>
+                                            <outlet property="reviewLable" destination="zXg-IF-4jE" id="S4m-z1-vRz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i40-Jc-4ED"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i40-Jc-4ED" firstAttribute="trailing" secondItem="9tv-KO-PPe" secondAttribute="trailing" constant="20" id="5Qq-Wm-UUt"/>
+                            <constraint firstItem="zdJ-wb-BJU" firstAttribute="leading" secondItem="i40-Jc-4ED" secondAttribute="leading" constant="20" id="CE7-kg-6R2"/>
+                            <constraint firstItem="i40-Jc-4ED" firstAttribute="trailing" secondItem="zdJ-wb-BJU" secondAttribute="trailing" constant="20" id="Ckf-GS-MfS"/>
+                            <constraint firstItem="i40-Jc-4ED" firstAttribute="bottom" secondItem="9tv-KO-PPe" secondAttribute="bottom" constant="20" id="EXq-2s-H4g"/>
+                            <constraint firstItem="9tv-KO-PPe" firstAttribute="top" secondItem="Miu-XS-NmN" secondAttribute="bottom" constant="20" id="Osx-ao-YjV"/>
+                            <constraint firstItem="Miu-XS-NmN" firstAttribute="centerX" secondItem="jKQ-sa-8du" secondAttribute="centerX" id="Tbg-Ho-qfl"/>
+                            <constraint firstItem="Miu-XS-NmN" firstAttribute="top" secondItem="zdJ-wb-BJU" secondAttribute="bottom" constant="50" id="v7n-6D-wWX"/>
+                            <constraint firstItem="9tv-KO-PPe" firstAttribute="leading" secondItem="i40-Jc-4ED" secondAttribute="leading" constant="20" id="w27-fk-tvP"/>
+                            <constraint firstItem="zdJ-wb-BJU" firstAttribute="top" secondItem="i40-Jc-4ED" secondAttribute="top" constant="50" id="xWK-Z7-Udo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Добавить отзыв" id="gWA-L5-Vcl"/>
+                    <connections>
+                        <outlet property="reviewTableView" destination="9tv-KO-PPe" id="v1u-fv-83l"/>
+                        <outlet property="reviewTextField" destination="zdJ-wb-BJU" id="wfj-59-sRI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3R-au-YL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2450.7246376811595" y="-607.36607142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gYW-I1-DdO">
@@ -440,8 +591,10 @@
                         <imageReference key="image" image="person.fill" catalog="system" symbolScale="large" renderingMode="template"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="loginButton" destination="wL2-gK-rv4" id="33d-nz-Oqj"/>
                         <outlet property="loginTextField" destination="PZk-RD-kh9" id="XTF-tI-hVh"/>
                         <outlet property="passwordTextField" destination="1xe-kU-t9u" id="brW-vE-hHg"/>
+                        <outlet property="registrationButton" destination="DN1-fA-RqZ" id="OYp-3g-oYB"/>
                         <segue destination="eDP-Q6-aio" kind="show" identifier="toUserView" id="h4X-my-ZW8"/>
                     </connections>
                 </viewController>
@@ -1009,8 +1162,14 @@
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

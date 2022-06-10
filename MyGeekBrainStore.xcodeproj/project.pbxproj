@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F047FE9284F9CFB00F65BA3 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F047FE8284F9CFB00F65BA3 /* ReviewViewController.swift */; };
+		0F047FEB284F9EA700F65BA3 /* ReviewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F047FEA284F9EA700F65BA3 /* ReviewVM.swift */; };
+		0F047FED284FA8C500F65BA3 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F047FEC284FA8C500F65BA3 /* ReviewTableViewCell.swift */; };
+		0F047FF1284FAAF200F65BA3 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F047FF0284FAAF200F65BA3 /* ReviewModel.swift */; };
+		0F047FF3284FABAD00F65BA3 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F047FF2284FABAD00F65BA3 /* Review.swift */; };
 		0F0D44822818330C00C2169C /* ChangeUserDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D44812818330C00C2169C /* ChangeUserDataResult.swift */; };
 		0F0D44842818333200C2169C /* LogoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D44832818333200C2169C /* LogoutResult.swift */; };
 		0F0D44862818336900C2169C /* RegisterationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D44852818336900C2169C /* RegisterationResult.swift */; };
@@ -38,6 +43,7 @@
 		0F6CD7FD2811A39D00929319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CD7FB2811A39D00929319 /* LaunchScreen.storyboard */; };
 		0F6CD8122811A39D00929319 /* MyGeekBrainStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CD8112811A39D00929319 /* MyGeekBrainStoreUITests.swift */; };
 		0F6CD8142811A39D00929319 /* MyGeekBrainStoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CD8132811A39D00929319 /* MyGeekBrainStoreUITestsLaunchTests.swift */; };
+		0F6F04402850EA330073B706 /* LoginViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6F043F2850EA330073B706 /* LoginViewUITests.swift */; };
 		0F7145672843A86E00DB85BF /* ChangeUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7145662843A86E00DB85BF /* ChangeUserInfoViewController.swift */; };
 		0F75201D28197E7100D79315 /* AuthRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F75201C28197E7100D79315 /* AuthRequestTest.swift */; };
 		0F756CDA283CDDC500C13661 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F756CD9283CDDC500C13661 /* BasketViewController.swift */; };
@@ -80,6 +86,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F047FE8284F9CFB00F65BA3 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		0F047FEA284F9EA700F65BA3 /* ReviewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVM.swift; sourceTree = "<group>"; };
+		0F047FEC284FA8C500F65BA3 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		0F047FF0284FAAF200F65BA3 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		0F047FF2284FABAD00F65BA3 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		0F0D44812818330C00C2169C /* ChangeUserDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataResult.swift; sourceTree = "<group>"; };
 		0F0D44832818333200C2169C /* LogoutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResult.swift; sourceTree = "<group>"; };
 		0F0D44852818336900C2169C /* RegisterationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationResult.swift; sourceTree = "<group>"; };
@@ -115,6 +126,7 @@
 		0F6CD80D2811A39D00929319 /* MyGeekBrainStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGeekBrainStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F6CD8112811A39D00929319 /* MyGeekBrainStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGeekBrainStoreUITests.swift; sourceTree = "<group>"; };
 		0F6CD8132811A39D00929319 /* MyGeekBrainStoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGeekBrainStoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0F6F043F2850EA330073B706 /* LoginViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewUITests.swift; sourceTree = "<group>"; };
 		0F7145662843A86E00DB85BF /* ChangeUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserInfoViewController.swift; sourceTree = "<group>"; };
 		0F75201C28197E7100D79315 /* AuthRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestTest.swift; sourceTree = "<group>"; };
 		0F756CD9283CDDC500C13661 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				0F26F7EB2816E06200947276 /* UserResult.swift */,
+				0F047FF0284FAAF200F65BA3 /* ReviewModel.swift */,
 				0F26F7E92816E04400947276 /* LoginResult.swift */,
 				0F0D44832818333200C2169C /* LogoutResult.swift */,
 				0F0D44852818336900C2169C /* RegisterationResult.swift */,
@@ -281,6 +294,7 @@
 				0F3CAD572840CE5F00B1A28B /* CatalogViewModel.swift */,
 				0F3CAD5B2840DF1900B1A28B /* CatalogItemViewModel.swift */,
 				0FE57D7C28464EAB0072629A /* ChangeUserInfoVM.swift */,
+				0F047FEA284F9EA700F65BA3 /* ReviewVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -291,6 +305,7 @@
 				0FFC77AB283D0E2B00BDB5D7 /* User.swift */,
 				0F103394283FDCE60000B56A /* Basket.swift */,
 				0F3CAD592840DA4100B1A28B /* Catalog.swift */,
+				0F047FF2284FABAD00F65BA3 /* Review.swift */,
 			);
 			path = Singletone;
 			sourceTree = "<group>";
@@ -342,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				0F6CD8112811A39D00929319 /* MyGeekBrainStoreUITests.swift */,
+				0F6F043F2850EA330073B706 /* LoginViewUITests.swift */,
 				0F6CD8132811A39D00929319 /* MyGeekBrainStoreUITestsLaunchTests.swift */,
 			);
 			path = MyGeekBrainStoreUITests;
@@ -366,6 +382,7 @@
 				0F756CD9283CDDC500C13661 /* BasketViewController.swift */,
 				0FFC77AD283D281500BDB5D7 /* CatalogViewController.swift */,
 				0F103392283F93380000B56A /* CatalogItemViewController.swift */,
+				0F047FE8284F9CFB00F65BA3 /* ReviewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -375,6 +392,7 @@
 			children = (
 				0FFC77A9283D071A00BDB5D7 /* BasketTableViewCell.swift */,
 				0FFC77AF283D28D100BDB5D7 /* CatalogTableViewCell.swift */,
+				0F047FEC284FA8C500F65BA3 /* ReviewTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -517,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FC238D12816EC6A005B34A0 /* AppDelegate.swift in Sources */,
+				0F047FEB284F9EA700F65BA3 /* ReviewVM.swift in Sources */,
 				0F7145672843A86E00DB85BF /* ChangeUserInfoViewController.swift in Sources */,
 				0F103395283FDCE60000B56A /* Basket.swift in Sources */,
 				0F3CAD582840CE5F00B1A28B /* CatalogViewModel.swift in Sources */,
@@ -534,11 +553,14 @@
 				0FE57D7D28464EAB0072629A /* ChangeUserInfoVM.swift in Sources */,
 				0F26F7DD2816CAE800947276 /* AbstractErrorParser.swift in Sources */,
 				0FFC77AA283D071A00BDB5D7 /* BasketTableViewCell.swift in Sources */,
+				0F047FE9284F9CFB00F65BA3 /* ReviewViewController.swift in Sources */,
 				0F26F7E12816CB7600947276 /* DataRequest.swift in Sources */,
+				0F047FED284FA8C500F65BA3 /* ReviewTableViewCell.swift in Sources */,
 				0F78FA0B28366194005F9DC4 /* ReviewRequest.swift in Sources */,
 				0F26F7F12816E0AE00947276 /* AuthRequestFactory.swift in Sources */,
 				0F78FA0D28366428005F9DC4 /* ReviewResult.swift in Sources */,
 				0FFC13B4281AB4B600BEEB35 /* ProductRequestFactory.swift in Sources */,
+				0F047FF1284FAAF200F65BA3 /* ReviewModel.swift in Sources */,
 				0F26F7E82816DFC000947276 /* RequestRouter.swift in Sources */,
 				0FFC77AE283D281500BDB5D7 /* CatalogViewController.swift in Sources */,
 				0F26F7EA2816E04400947276 /* LoginResult.swift in Sources */,
@@ -553,6 +575,7 @@
 				0F1447E8283BBC2A00DE81FF /* BasketRequest.swift in Sources */,
 				0F26F7EC2816E06200947276 /* UserResult.swift in Sources */,
 				0F6CD7F32811A39C00929319 /* SceneDelegate.swift in Sources */,
+				0F047FF3284FABAD00F65BA3 /* Review.swift in Sources */,
 				0F78FA0928366181005F9DC4 /* ReviewRequestFactory.swift in Sources */,
 				0F26F7E32816DC1000947276 /* CustomDecodableSerializer.swift in Sources */,
 				0FFC77AC283D0E2B00BDB5D7 /* User.swift in Sources */,
@@ -579,6 +602,7 @@
 			files = (
 				0F6CD8122811A39D00929319 /* MyGeekBrainStoreUITests.swift in Sources */,
 				0F6CD8142811A39D00929319 /* MyGeekBrainStoreUITestsLaunchTests.swift in Sources */,
+				0F6F04402850EA330073B706 /* LoginViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

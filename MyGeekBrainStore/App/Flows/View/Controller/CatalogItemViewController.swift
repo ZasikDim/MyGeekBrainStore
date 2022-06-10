@@ -28,6 +28,11 @@ class CatalogItemViewController: UIViewController {
         count.text = "\(Int(sender.value))"
         viewModel.quantity = Int(sender.value)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "fromItemToReviewView" else { return }
+        guard let destination = segue.destination as? ReviewViewController, let itemId = viewModel.item?.id else { return }
+        destination.viewModel.itemId = itemId
+    }
     
     private func configure() {
         stepper.maximumValue = 10.0

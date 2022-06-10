@@ -11,11 +11,26 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registrationButton: UIButton!
     
     private let viewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginTextField.isAccessibilityElement = true
+        loginTextField.accessibilityIdentifier = "loginTextField"
+        
+        passwordTextField.isAccessibilityElement = true
+        passwordTextField.accessibilityIdentifier = "passwordTextField"
+        
+        loginButton.isAccessibilityElement = true
+        loginButton.accessibilityIdentifier = "loginButton"
+        
+        registrationButton.isAccessibilityElement = true
+        registrationButton.accessibilityIdentifier = "registrationButton"
+        
+        view.accessibilityIdentifier = "LoginViewController"
     }
     
     @IBAction func logInButtonTapped(_ sender: UIButton) {
