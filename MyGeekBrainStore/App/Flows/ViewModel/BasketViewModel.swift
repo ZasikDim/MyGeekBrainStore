@@ -15,6 +15,7 @@ final class BasketViewModel {
     
     private let user = User.shared
     private let basketRequestFactory = RequestFactory().makeBasketRequestFactory()
+    private let reportExceptions = CrashlyticsReport()
     
     func pay() {
         if !basket.items.isEmpty {
@@ -24,8 +25,11 @@ final class BasketViewModel {
                 case .success(let result):
                     if result.result == 1 {
                         self.updateMassage(massage: result.userMessage ?? "")
+                    } else {
+                        self.reportExceptions.report(error: "pay result 0", code: CrashlyticsCode.rejectionResult.rawValue)
                     }
                 case .failure(let error):
+                    self.reportExceptions.report(error: error.localizedDescription, code: CrashlyticsCode.failureResponse.rawValue)
                     print(error.localizedDescription)
                 }
             }
@@ -40,6 +44,7 @@ final class BasketViewModel {
                     self.updateMassage(massage: result.userMessage ?? "")
                 }
             case .failure(let error):
+                self.reportExceptions.report(error: error.localizedDescription, code: CrashlyticsCode.failureResponse.rawValue)
                 print(error.localizedDescription)
             }
         }
@@ -55,6 +60,7 @@ final class BasketViewModel {
                     self.massage = nil
                 }
             case .failure(let error):
+                self.reportExceptions.report(error: error.localizedDescription, code: CrashlyticsCode.failureResponse.rawValue)
                 print(error.localizedDescription)
             }
         }

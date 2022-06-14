@@ -10,6 +10,7 @@ import Foundation
 final class RegistrationViewModel {
     
     private let authRequest = RequestFactory().makeAuthRequestFatory()
+    private let reportExceptions = CrashlyticsReport()
     
     var updateViewWithMassage: (() -> Void)?
     var massage: String?
@@ -24,8 +25,11 @@ final class RegistrationViewModel {
                     self.updateViewWithMassage?()
                     self.massage = nil
                     
+                } else {
+                    self.reportExceptions.report(error: "registration result 0", code: CrashlyticsCode.rejectionResult.rawValue)
                 }
             case .failure(let error):
+                self.reportExceptions.report(error: error.localizedDescription, code: CrashlyticsCode.failureResponse.rawValue)
                 print(error.localizedDescription)
             }
         }
