@@ -9,6 +9,7 @@ import Foundation
 
 final class LoginViewModel {
 
+    private let reportExceptions = CrashlyticsReport()
     private let authRequestFactory = RequestFactory().makeAuthRequestFatory()
     private var user = User.shared
     
@@ -23,11 +24,12 @@ final class LoginViewModel {
                     self.user.name = result.user.name
                     self.user.lastname = result.user.lastname
                     completion(true)
+                } else {
+                    self.reportExceptions.report(error: "logIn result 0", code: CrashlyticsCode.rejectionResult.rawValue)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                self.reportExceptions.report(error: error.localizedDescription, code: CrashlyticsCode.failureResponse.rawValue)
                 completion(false)
-                
             }
         }
     }

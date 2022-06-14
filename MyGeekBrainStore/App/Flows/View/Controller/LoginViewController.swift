@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -15,7 +16,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registrationButton: UIButton!
     
     private let viewModel = LoginViewModel()
-
+    private let reportExceptions = CrashlyticsReport()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loginTextField.isAccessibilityElement = true
@@ -62,6 +64,7 @@ class LoginViewController: UIViewController {
             }
         }
         else {
+            reportExceptions.reportWithUserInfo(userId: User.shared.id)
             showAlert(text: "Заполните поля логин и пароль.")
         }
     }
